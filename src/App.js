@@ -1,5 +1,13 @@
 import { useState } from "react";
-import { closestCorners, DndContext, KeyboardSensor, PointerSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
+import {
+  closestCorners,
+  DndContext,
+  KeyboardSensor,
+  PointerSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
 import { Column } from "./components/Column/Column";
 import { arrayMove, sortableKeyboardCoordinates } from "@dnd-kit/sortable";
 import "./App.css";
@@ -40,8 +48,8 @@ export default function App() {
   };
 
   const addTask = (title) => {
-    setTasks([...tasks, {id:tasks.length+1, title}])
-  }
+    setTasks([...tasks, { id: tasks.length + 1, title }]);
+  };
 
   return (
     <div className="App">
@@ -51,7 +59,7 @@ export default function App() {
         onDragEnd={handleDragEnd}
         sensors={sensors}
       >
-        <Input addTask={addTask}/>
+        <Input addTask={addTask} />
         <Column tasks={tasks} />
       </DndContext>
     </div>

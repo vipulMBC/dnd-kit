@@ -17,9 +17,16 @@ export const Task = ({ id, title }) => {
       ref={setNodeRef}
       style={style}
       {...attributes}
-      {...listeners}
+      // {...listeners}
       className="task"
     >
+      <img
+        alt="drag"
+        className="drag"
+        width="10%"
+        src="icons/drag-and-drop.jpg"
+        {...listeners}
+      />
       <input type="checkbox" className="checkbox" />
       {title}
     </div>
